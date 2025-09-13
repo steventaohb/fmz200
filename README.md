@@ -1,5 +1,8 @@
+<h1 align="center">Hi 👋, I'm 奶思</h1>
+<h3 align="center">A Java developer from China 🇨🇳</h3>
 
-### 👋 Hi. 我是奶思（nice的谐音）
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" alt="">
+
 - 👀 喜欢研究一些有趣的软件和网站。
 - 🌱 我正在学习Java，JavaScript，以及Python。
 - 📫 如何联系我？[Telegram chat](https://t.me/naisi_chat_bot)，[发送邮件](mailto:super@vime50.com?subject=我从GitHub跳转而来想要与您建立沟通)
