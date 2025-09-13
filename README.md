@@ -21,15 +21,8 @@
 
 
 ### 🧚‍♀️ 访问量统计
-开始于 2022.12.05
+开始于 2025.09.13
 
-![Visitor Count](https://profile-counter.glitch.me/fmz200/count.svg)
+![GitHub Profile Views](https://komarev.com/ghpvc/?username=fmz200&color=green)
 
-<!---   ![](https://komarev.com/ghpvc/?username=fmz200&color=green)    --->
-
-
-
-<!---
-fmz200/fmz200 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+<!---   ![Visitor Count](https://profile-counter.glitch.me/fmz200/count.svg)    --->
