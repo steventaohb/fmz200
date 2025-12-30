@@ -1,0 +1,63 @@
+
+const $ = new Env("搜集签到");
+
+(() => {
+  const originalUrl = 'https://api.vrka.cn/sjqd.php?account=steventaohb*steven1008.**steventaohb';
+
+  let url = encodeURI(originalUrl);
+
+  $.get({ url, timeout: 10000 }, (err, resp, data) => {
+    let now = new Date().toLocaleTimeString();
+
+    if (err) {
+      $.notify("请求失败", now, String(err));
+    } else if (data) {
+      $.notify("签到成功", now, data.trim());
+    } else {
+      $.notify("空响应", now, "状态码: " + (resp?.status || "未知"));
+    }
+
+    $.done();
+  });
+})();
+
+function Env(name) {
+  const isQX = typeof $task !== "undefined";
+  const isLoon = typeof $loon !== "undefined";
+  const isSurge = typeof $httpClient !== "undefined" && !isLoon;
+
+  return {
+    name,
+    isQX,
+    isLoon,
+    isSurge,
+
+    notify(title, subtitle, message) {
+      if (isQX) $notify(title, subtitle, message);
+      if (isSurge) $notification.post(title, subtitle, message);
+      if (isLoon) $notification.post(title, subtitle, message);
+    },
+
+    get(options, callback) {
+      if (isQX) {
+        options.method = "GET";
+        $task.fetch(options).then(
+          (resp) => callback(null, resp, resp.body),
+          (err) => callback(err)
+        );
+      } else if (isSurge || isLoon) {
+        $httpClient.get(options, (err, resp, body) => {
+          callback(err, resp, body);
+        });
+      }
+    },
+
+    done(value = {}) {
+      if (isQX) {
+        return value;
+      } else {
+        $done(value);
+      }
+    }
+  };
+}
